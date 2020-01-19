@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">AppsFactory</string>
+    <string name="ok">Ok</string>
+    <string name="some_error_occurred">Something went wrong, please try again later.</string>
+    <string name="error">Error</string>
+    <string name="search">Search</string>
+    <string name="home">Home</string>
+    <string name="network_error">Please check your internet connectivity.</string>
+    <string name="action_settings">Search Artist</string>
+    <string name="search_artist">Search Artist</string>
+    <string name="album_detail">Album Detail</string>
+    <string name="top_albums">Top Albums</string>
+    <string name="find_more">Find Artists</string>
+    <string name="empty_albums">Favourite Albums Container</string>
+    <string name="no_result_found">No result found, please try some other keyword</string>
+    <string name="no_albums_found">No albums found</string>
+    <string name="no_tracks_found">No tracks found</string>
+</resources>

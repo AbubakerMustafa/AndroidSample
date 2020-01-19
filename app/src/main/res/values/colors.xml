@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
+    <color name="bg_loader">#3E000000</color>
+    <color name="bg_progress">#46aa80</color>
+    <color name="white">#FFFFFF</color>
+    <color name="textColor">#292B29</color>
+    <color name="button_bg">#84c9ac</color>
+    <color name="disabled_button">#8C968C</color>
+    <color name="bg">#D2D5D2</color>
+</resources>

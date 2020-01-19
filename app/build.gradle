@@ -1,0 +1,134 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-allopen'
+apply plugin: 'androidx.navigation.safeargs'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion build_versions.target_sdk
+    buildToolsVersion build_versions.build_tools
+
+    dataBinding {
+        enabled = true
+    }
+
+    defaultConfig {
+        applicationId "com.appsfactory.lastfm"
+        minSdkVersion build_versions.min_sdk
+        targetSdkVersion build_versions.target_sdk
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.kotlin.stdlib
+
+    implementation deps.support.app_compat
+    implementation deps.support.v4
+    implementation deps.support.core_utils
+    implementation deps.support.core_ktx
+    implementation deps.support.vectordrawable
+    implementation deps.support.vectordrawable_animated
+
+    testImplementation deps.junit
+    androidTestImplementation deps.atsl.runner
+    androidTestImplementation deps.espresso.core
+
+    // Support Design
+    implementation deps.support.design
+
+    // RecyclerView
+    implementation deps.support.recyclerview
+
+    // Constraint Layout
+    implementation deps.constraint_layout
+
+    // Card View
+    implementation deps.support.cardview
+
+    // LiveData & ViewModel
+    implementation deps.lifecycle.extensions
+
+    // Room
+    implementation deps.room.runtime
+    implementation deps.room.rxjava2
+    kapt deps.room.compiler
+
+    // Retrofit
+    implementation deps.retrofit.runtime
+    implementation deps.retrofit.adapter_rxjava2
+    implementation deps.retrofit.converter_moshi
+    implementation deps.okhttp_logging_interceptor
+    implementation deps.retrofit.gson
+
+    // Dagger 2
+    implementation deps.dagger.runtime
+    implementation deps.dagger.android
+    implementation deps.dagger.android_support
+    kapt deps.dagger.compiler
+    kapt deps.dagger.android_support_compiler
+
+    implementation deps.glide.runtime
+    kapt deps.glide.compiler
+
+    //Rx
+    implementation deps.rxjava2
+    implementation deps.rx_android
+    implementation deps.navigation.fragment
+
+
+    // Navigation
+    implementation deps.navigation.fragment_ktx
+    implementation deps.navigation.ui_ktx
+
+    // Multidex
+    implementation deps.multidex
+
+    //paging
+    implementation deps.paging.runtime
+    implementation deps.paging.rxjava2
+    implementation deps.paging.paging_ktx
+
+    implementation deps.coroutines
+    implementation deps.hamcrest
+
+    testImplementation deps.junit
+    testImplementation deps.mock_web_server
+    testImplementation deps.mockito
+    testImplementation deps.mockito_kotlin
+    testImplementation deps.test_core
+    testImplementation deps.hamcrest
+
+    androidTestImplementation deps.junit
+    androidTestImplementation deps.mock_web_server
+    androidTestImplementation deps.mockito
+    androidTestImplementation deps.mockito_kotlin
+    androidTestImplementation deps.test_core
+    androidTestImplementation deps.hamcrest
+
+    androidTestCompile('com.android.support.test.espresso:espresso-contrib:2.0') {
+        exclude group: 'com.android.support', module: 'appcompat'
+        exclude group: 'com.android.support', module: 'support-v4'
+        exclude module: 'recyclerview-v7'
+    }
+
+    implementation 'androidx.test.espresso:espresso-idling-resource:3.2.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+
+}

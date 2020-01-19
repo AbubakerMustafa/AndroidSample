@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="match_parent"
+            android:background="@color/white"
+            android:layout_height="match_parent">
+
+        <RelativeLayout
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rl_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+            <FrameLayout
+                    android:id="@+id/fl_toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"/>
+
+            <FrameLayout
+                    android:id="@+id/view_stub"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_above="@id/fl_footer"
+                    android:layout_below="@+id/fl_toolbar">
+
+            </FrameLayout>
+
+            <FrameLayout
+                    android:id="@+id/fl_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@id/fl_toolbar"
+                    android:background="@color/bg_loader"
+                    android:visibility="gone">
+
+
+                <ProgressBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:indeterminateTint="@color/bg_progress"
+                        android:indeterminateTintMode="src_in"
+                        android:indeterminate="true"
+                />
+
+
+            </FrameLayout>
+
+            <FrameLayout
+                    android:id="@+id/fl_footer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="parent"/>
+        </RelativeLayout>
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>
